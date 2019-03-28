@@ -1,0 +1,4 @@
+for ROUTE in $WARMUP_ROUTES; do
+  echo "[warmup] calling $ROUTE"
+  curl -L "http://localhost:$PORT$ROUTE" >/dev/null 2>&1
+done
