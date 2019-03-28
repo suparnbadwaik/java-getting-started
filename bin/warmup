@@ -1,3 +1,8 @@
+#until $(curl -o /dev/null -s -I -f http://localhost:$PORT); do
+until $(curl -o /dev/null -s -I -f https://powerful-fjord-95082.herokuapp.com); do
+  sleep 5
+done
+
 for ROUTE in $WARMUP_ROUTES; do
   echo "[warmup] calling $ROUTE"
   # curl -L "http://localhost:$PORT$ROUTE" >/dev/null 2>&1
